@@ -1,0 +1,23 @@
+.selecionado {
+    font-weight: bold;
+}
+
+li p:nth-child(1) {
+    cursor: pointer;
+    font-size: 12pt;
+}
+
+li p:nth-child(1):hover {
+    font-weight: bold;
+}
+
+li p:nth-child(2) {
+    font-size: 10pt;
+}
+form{
+    margin: 10px 3px 30px 5px;
+}
+pre{
+    height: 20%;
+    width: 100%;
+}
