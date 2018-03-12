@@ -8,6 +8,7 @@ import {Disciplina} from './disciplina.model';
 export class AppComponent {
     info: string = null;
     selecionado = null;
+    exibir= false;
     codigo: number = null;
     nome: string = null;
     professor:string = null;
@@ -106,6 +107,7 @@ export class AppComponent {
         this.nome = null;
         this.professor = null;
         this.descricao = null;
+        this.oculta('oculta');
     }
   excluir(disciplina) {
       if (confirm('Tem certeza que deseja excluir a disciplina "'
@@ -115,10 +117,12 @@ export class AppComponent {
       }
   }
     editar(disciplina) {
+        this.oculta('exibir');
         this.nome = disciplina.nome;
         this.descricao = disciplina.descricao;
         this.codigo = disciplina.codigo;
         this.professor = disciplina.professor;
+
     }
     cancel() {
         this.nome = null;
@@ -127,11 +131,7 @@ export class AppComponent {
         this.professor = null;
         this.selecionado = null;
     }
-   oculta() {
-        this.nome = null;
-        this.descricao = null;
-        this.codigo = null;
-        this.professor = null;
-        this.selecionado = null;
+   oculta(local:  any) {
+        this.exibir = local ==='exibir' ? true : false;
     }
 }
