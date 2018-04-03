@@ -45,7 +45,36 @@
         <label for="descricao">Descrição:</label><br>
         <textarea id="descricao" name="descricao" [(ngModel)]="descricao" cols="70" rows="5"> </textarea>
       </div>
-      <button type="submit" class=" btn btn-success btn btn-large btn-outline" [disabled]="!cadastro.valid">
+      <div>
+        <label for="data">Data:</label><br>
+        <input id="data" name="date" type="date" [(ngModel)]="data" class="form-control">
+      </div>
+        <hr>
+      <div>
+          <label >Ativo:</label><br>
+        <input id="ativa" value="A" type="checkbox" name="ativa" [(ngModel)]="ativa" class="form-control-input">
+        <label class="form-control-label" for="ativa">Ativo</label><br>
+      </div>
+        <hr>
+        <div class="form-control">
+          <input id="tipo2" type="radio" value="principal" [(ngModel)]="tipo" name="tipo" class="form-control-input">
+          <label>Principal</label><br>
+          <input id="tipo1" type="radio" value="secundario"  [(ngModel)]="tipo" name="tipo" class="form-control-input">
+          <label class="form-control-label" for="tipo1">Secundario</label><br>
+        </div>
+        <hr>
+        <label>Periodo:</label>
+      <div class="form-control" >
+        <select id="periodo1" name="periodo" [(ngModel)]="periodo">
+          <option value="1">Insciplinado em sala de aula</option>
+          <option value="2">comportamento de rendimento</option>
+          <option value="3">baixo indice de rendimento</option>
+          <option value="4">Quarto</option>
+
+
+        </select>
+      </div>
+      <button  type="submit" class=" btn btn-success btn btn-large btn-outline" [disabled]="!cadastro.valid">
         Salvar
       </button>
       <button class="btn btn-secondary" (click)="oculta('cancelar')" type="submit" class=" btn btn-success btn btn-large btn-outline">
